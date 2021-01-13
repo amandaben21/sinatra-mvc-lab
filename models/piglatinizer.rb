@@ -1,9 +1,5 @@
 class PigLatinizer
-    def piglatinize(string)
-        a = string.split(" ")
-        b = a.map {|word| piglatinize_word(word)}
-        b.join(" ")
-    end
+  
 
     def piglatinize_word(word)
         first_letter = word[0].downcase
@@ -21,5 +17,11 @@ class PigLatinizer
             end
             "#{word[consonants.length..-1] + consonants.join + "ay"}"
         end
+    end
+
+    def piglatinize(string)
+        a = string.split(" ")
+        b = a.map {|word| piglatinize_word(word)}
+        b.join(" ")
     end
 end
